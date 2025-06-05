@@ -4,7 +4,7 @@
   "description": "Hello",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test",
     "worker": "node worker.js",
     "start": "node client.js"
   },
@@ -16,5 +16,8 @@
     "@temporalio/client": "^1.11.8",
     "@temporalio/worker": "^1.11.8",
     "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@temporalio/testing": "^1.11.8"
   }
 }
