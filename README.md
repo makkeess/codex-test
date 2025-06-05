@@ -46,6 +46,10 @@ To experiment with the shopping cart workflow, start the express server:
 npm run server
 ```
 
+Once the server is running, open `http://localhost:3000/` in your browser. A
+very small web interface lets you pick items, add them to a cart and perform
+checkout. The interface communicates with the API described below.
+
 Available endpoints:
 
 - `GET /items` – list available items
