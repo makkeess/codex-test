@@ -4,7 +4,7 @@ This project demonstrates a simple checkout workflow using the Temporal.io JavaS
 
 ## Purpose
 
-The example shows how a worker and client interact to complete a basic e-commerce checkout. It uses Workflow code to fetch a cart, process a payment, and persist the order. The project is intended as a small reference for getting started with Temporal.
+The example shows how a worker and client interact to complete a basic e-commerce checkout. It now also exposes a simple web server that lets you create a cart, add items, and checkout using Temporal workflows. The project is intended as a small reference for getting started with Temporal.
 
 ## Running Temporal Locally
 
@@ -30,12 +30,26 @@ Start the Temporal worker to process workflows:
 npm run worker
 ```
 
-## Starting the Workflow
+## Starting the Example Client
 
-In a separate terminal, run the client to start a checkout workflow:
+You can still run the example client to start the old checkout workflow:
 
 ```bash
 npm start
 ```
 
-The workflow orchestrates simple activities that fetch a cart, process a payment, and save an order.
+## Running the Web Server
+
+To experiment with the shopping cart workflow, start the express server:
+
+```bash
+npm run server
+```
+
+Available endpoints:
+
+- `GET /items` – list available items
+- `POST /cart/create` – create a new cart
+- `POST /cart/:id/add` – add an item using `{ "itemId": "apple", "qty": 2 }`
+- `GET /cart/:id` – view cart items
+- `POST /cart/:id/checkout` – checkout and complete the order
