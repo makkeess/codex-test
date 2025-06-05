@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node --test",
     "worker": "node worker.js",
-    "start": "node client.js"
+    "start": "node client.js",
+    "server": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@temporalio/client": "^1.11.8",
     "@temporalio/worker": "^1.11.8",
+    "express": "^4.21.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
