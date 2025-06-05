@@ -1,9 +1,13 @@
 import express from 'express';
 import { Connection, Client } from '@temporalio/client';
 import { v4 as uuidv4 } from 'uuid';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 app.use(express.json());
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(join(__dirname, 'public')));
 
 const catalog = {
   apple: { name: 'Apple', price: 1 },
